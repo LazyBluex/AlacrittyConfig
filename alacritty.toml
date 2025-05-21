@@ -1,26 +1,49 @@
-import = ["~/.config/alacritty/themes/themes/coolnight.toml"]
-
 [env]
 TERM = "xterm-256color"
 
-[shell]
-program = "/bin/zsh"
-args = ["-l"]
-
 [window]
-padding.x = 10
-padding.y = 10
-
+dynamic_padding = false
+#dimensions = { columns = 120, lines = 40 }
+#position = { x = 100, y = 100 }
+#startup_mode = "Maximized"
 decorations = "Buttonless"
-
-opacity = 0.85
+opacity = 0.88
 blur = true
 
-option_as_alt = "Both"
-
 [font]
-normal.family = "Hack Nerd Font Mono"
-size = 12
+normal = { family = "Hack Nerd Font Mono", style = "Regular" }
+bold = { family = "Hack Nerd Font Mono", style = "Bold" }
+italic = { family = "Hack Nerd Font Mono", style = "Italic" }
+#normal = { family = "DejaVuSansM Nerd Font Mono", style = "Regular" }
+size = 12.0
+
+
+
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+[terminal.shell]
+program = "C:\\Windows\\System32\\wsl.exe"
+args = ["-d", "Ubuntu-22.04"]
+#args = ["-d", "Ubuntu-22.04", "--cd", "~"]
+
 
 [keyboard]
-bindings = [{ key = "F11", action = "ToggleFullscreen" }]
+bindings = [
+  # 复制
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  # 粘贴
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  # 新建窗口
+  { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" },
+  # 全屏
+  { key = "F11", action = "ToggleFullscreen" }
+]
+
+[general]
+import = ["themes/themes/monokai_charcoal.toml"]
+
+[terminal]
+
+
